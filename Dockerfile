@@ -24,7 +24,7 @@ RUN mkdir /scripts
 RUN mkdir /static-files
 RUN mkdir /nginx
 # we set the path were all the python pacakages are
-ENV PATH /opt/conda/envs/luna-environment/bin:$PATH
+ENV PATH /opt/miniconda/envs/luna-environment/bin:$PATH
 
 # activate app
 RUN echo "source activate luna-environment" >~/.bashrc
