@@ -19,6 +19,7 @@ services:
       - postgres
     volumes:
       - static-files:/static-files
+      - ./scripts:/scripts
   postgres:
     image: postgres:latest
     volumes:
