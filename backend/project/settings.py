@@ -145,6 +145,7 @@ USE_TZ = True
 STATIC_URL = '/static-files/'
 STATIC_ROOT = '/static-files'
 AUTH_RESTAURANT_MODEL = 'restaurants.Restaurant'
+AUTH_USER_MODE= ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Host for sending e-mail.
