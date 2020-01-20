@@ -48,11 +48,11 @@ class Restaurant(models.Model):
 
     # the like method many to many
     # many to many creates a new table which connects the posts to the user.
-    # rated_by = models.ManyToManyField(
-    #     to=settings.AUTH_USER_MODEL,
-    #     related_name='ratings',
-    #     blank=True
-    # )
+    rated_by = models.ManyToManyField(
+        to=settings.AUTH_USER_MODEL,
+        related_name='ratings',
+        blank=True
+    )
 
     class Meta:
         ordering = ('-timestamp',)
