@@ -37,14 +37,6 @@ COPY ./backend /backend
 #COPY ./scripts/* /scripts/
 #RUN chmod +x /scripts/*
 
-
-RUN echo "source activate motion-scratch" >~/.bashrc
-
-RUN echo 'export PATH=/opt/miniconda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-    /bin/bash ~/miniconda.sh -b -p /opt/miniconda && \
-    rm ~/miniconda.sh
-
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs && apt-get install -y npm
 
 # set the working directory to /app for whenever you login into your container
