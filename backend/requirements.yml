@@ -1,4 +1,4 @@
-name: luna
+name: luna-environment
 
 dependencies:
     - python=3.7
