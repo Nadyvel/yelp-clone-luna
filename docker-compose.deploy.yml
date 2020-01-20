@@ -12,13 +12,16 @@ services:
       - media-files:/media-files
   backend:
     image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/group-projects/aquarius
-    command: "sh /scripts/run.sh"
+#    command: "sh /scripts/run.sh"
+    command: "tail -f /dev/null"  # TEMPORARY
+
     env_file:
       - ./prod.env
     depends_on:
       - postgres
     volumes:
       - static-files:/static-files
+      - ./scripts:/scripts
   postgres:
     image: postgres:latest
     volumes:
@@ -26,6 +29,6 @@ services:
     env_file:
       - ./prod.env
 volumes:
-  motion-assignment:
+  luna:
   static-files:
   media-files:
