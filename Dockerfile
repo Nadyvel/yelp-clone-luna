@@ -19,7 +19,7 @@ RUN echo 'export PATH=/opt/miniconda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 
 # create the environment inside the docker container
-RUN conda env create -f /backend/requirements.yml
+RUN /opt/miniconda/bin/conda env create -f /backend/requirements.yml
 RUN mkdir /scripts
 RUN mkdir /static-files
 RUN mkdir /nginx
