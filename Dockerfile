@@ -6,9 +6,9 @@ COPY ./backend/requirements.yml /backend/requirements.yml
 
 # create the environment inside the docker container
 RUN conda env create -f /backend/requirements.yml
-#RUN mkdir /scripts
-#RUN mkdir /static-files
-#RUN mkdir /nginx
+RUN mkdir /scripts
+RUN mkdir /static-files
+RUN mkdir /nginx
 # we set the path were all the python pacakages are
 ENV PATH /opt/conda/envs/luna-environment/bin:$PATH
 
@@ -25,6 +25,13 @@ COPY ./backend /backend
 
 RUN echo "source activate motion-scratch" >~/.bashrc
 # set the working directory to /app for whenever you login into your container
+WORKDIR /frontend
+COPY ./frontend/package.json /frontend/
+COPY ./frontend/package-lock.json /frontend/
+RUN npm install
+COPY ./frontend /frontend
+RUN npm run build
+
 WORKDIR /backend
 
 # '/backend' can be named differently. this is the main folder for your backend app

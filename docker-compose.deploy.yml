@@ -26,6 +26,6 @@ services:
     env_file:
       - ./prod.env
 volumes:
-  motion-assignment:
+  luna:
   static-files:
   media-files:
