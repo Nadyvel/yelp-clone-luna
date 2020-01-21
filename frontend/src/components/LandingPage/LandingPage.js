@@ -7,7 +7,6 @@ import {fetchRestaurantDetails} from '../../store/action/restaurantActions';
 
 const LandingPage = (props) => {
     useEffect(() => {
-        console.log('props', props)
         props.dispatch(fetchRestaurantDetails())
     }, []);
     return (
@@ -19,11 +18,11 @@ const LandingPage = (props) => {
                 <h2 className="title">BEST RATED RESTAURANTS</h2>
                 <div className="RestaurantCard-section">
 
-                {props.restaurants.length > 0 &&
-                        [props.restaurants].map((restaurant, index) => {
-                            return <RestaurantCard key={index} restaurant={restaurant}/>
-                        })
-                }
+                    {props.restaurants.length > 0 &&
+                    [props.restaurants].map((restaurant, index) => {
+                        return <RestaurantCard key={index} restaurant={restaurant}/>
+                    })
+                    }
                 </div>
             </div>
         </div>

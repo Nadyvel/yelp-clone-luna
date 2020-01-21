@@ -4,11 +4,11 @@ import "./App.css";
 import { connect } from "react-redux";
 import LandingPage from "./components/LandingPage/LandingPage";
 
-const App = () => {
+const App = (props) => {
   return (
       <div>
         <Header />
-        <LandingPage/>
+        {props.children}
       </div>
 )};
 
