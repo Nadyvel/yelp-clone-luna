@@ -1,0 +1,20 @@
+.title {
+    display: inline-block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    box-shadow: 0 19px 0 -15px black;
+}
+
+.restaurant-card-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.RestaurantCard-section {
+    display: flex;
+    height: 410px;
+    justify-content: center;
+    margin: 10px;
+}
