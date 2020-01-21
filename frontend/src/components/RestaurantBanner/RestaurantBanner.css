@@ -1,6 +1,21 @@
 .banner-box {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 300px;
-    border: 1px solid red;
-    background-image: ;
+    background-size: cover;
+    background-image: url("../../assets/images/RestaurantBanner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.input-field {
+    width: 530px;
+    height: 55px;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffffff;
+    margin-right: 15px;
+    font-size: 20px;
+    padding-left: 16px;
 }

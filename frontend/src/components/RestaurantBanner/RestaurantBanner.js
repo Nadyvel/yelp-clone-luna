@@ -7,7 +7,7 @@ const RestaurantBanner = () => {
     return (
         <div className="banner-box">
             <form>
-                <input placeholder="Search..."/>
+                <input className="input-field" placeholder="Search..."/>
                 <OrangeButton content={"Search"} />
             </form>
         </div>

@@ -1,24 +1,17 @@
 import React from "react";
-import { connect } from "react-redux";
-import "./index.css";
+import {connect} from "react-redux";
+import "./RestaurantCard.css";
 
 const RestaurantCard = props => {
-  return (
-    <div>
-      <h3>
-        {props.restaurantDetails.name}
-      </h3>
-      <h4>{props.restaurantDetails.location}</h4>
-      <p>Stars</p>
-      <img src={props.restaurantDetails.avatar} alt="avatar" />
-    </div>
-  );
+    return (
+        <div className="RestaurantCard">
+            <h3>{props.restaurant.name}</h3>
+            <h4>{props.restaurant.location}</h4>
+            <p>Stars</p>
+            <img className="RestaurantCard-img" src={props.restaurant.image} alt="restaurant-image"/>
+        </div>
+    );
 };
 
-const mapStateToProps = state => {
-  return {
-    restaurantDetails: state.restaurantDetails.restaurantDetails
-  };
-};
 
-export default connect(mapStateToProps)(RestaurantCard);
+export default connect()(RestaurantCard);
