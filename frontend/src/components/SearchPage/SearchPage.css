@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+.Body {
+    width: 100%;
+}
+
+.SearchBarContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.SearchBar {
+    width: 80%;
+}
+
+.SearchBar input {
+    width: 100%;
+    height: 100%;
+}
+
+.SelectCategory {
+    width: 20%;
+}
+
+.SelectCategory input {
+    width: 100%;
+}
+
+.SearchCategoryBody {
+    display: flex;
+    justify-content: center;
+}
+
+.SearchCategoryContainer {
+    display: flex;
+    justify-content: center;
+    width: 630px;
+    box-shadow: 0 19px 0 -15px #e47d31;
+}
+
+.Link {
+    padding: 1rem;
+}
