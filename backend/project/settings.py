@@ -152,8 +152,8 @@ USE_TZ = True
 STATIC_URL = '/static-files/'
 STATIC_ROOT = '/static-files'
 
-STATIC_URL = '/media-files/'
-STATIC_ROOT = '/media-files'
+MEDIA_URL = '/media-files/'
+MEDIA_ROOT = '/media-files'
 
 AUTH_USER_MODEL = 'users.User'
 
