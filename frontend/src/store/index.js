@@ -15,7 +15,19 @@ const initialState = {
   ],
   restaurant: [
     {
-      restaurant_name: null
+      id: null,
+      name: null,
+      category: null,
+      country: null,
+      street: null,
+      city: null,
+      ZIP: null,
+      website: null,
+      phone: null,
+      email: null,
+      opening_hours: null,
+      price_level: null,
+      image: null,
     }
   ]
 };
