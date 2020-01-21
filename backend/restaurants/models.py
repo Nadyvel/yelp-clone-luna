@@ -1,41 +1,120 @@
 from django.db import models
 
-
-# Create your models here.
 from project import settings
 
 
 class Restaurant(models.Model):
-    restaurant = models.ForeignKey(
-        verbose_name='restaurant',
-        to=settings.AUTH_RESTAURANT_MODEL,  # authentication of the restaurant in the settings.py file
-        on_delete=models.CASCADE,
-        related_name='users',  # reverse relation from restaurant to user
-        null=True
+
+    user = models.ForeignKey(
+        on_delete=models.SET_NULL,
+        to=settings.AUTH_USER_MODEL,
+        related_name='restaurants',
+        null=True,
     )
 
-    title = models.TextField(
-        verbose_name='title',
-        blank=True,
-        null=True
+    name = models.CharField(
+        verbose_name='restaurant_name',
+        max_length=50,
     )
 
-    content = models.TextField(
-        verbose_name='content',
-        blank=True,
-        null=True
+    # country = models.CharField(
+    #     verbose_name='select country',
+    #     max_length=50,
+    #
+    # )
+
+    street = models.CharField(
+        verbose_name='restaurant_street',
+        max_length=50,
     )
 
-    restaurantpic = models.ImageField(
-        upload_to='',
-        blank=True,
-        null=True
+    city = models.CharField(
+        verbose_name='restaurant_city',
+        max_length=50,
     )
 
-    category = models.TextField(
-        verbose_name='category',
+    zip = models.CharField(
+        verbose_name='restaurant_zip',
+        max_length=10,
         blank=True,
-        null=True
+    )
+
+    website = models.URLField(
+        verbose_name='restaurant_website',
+        # default length 200 is used
+        blank=True,
+    )
+    phone_number = models.CharField(
+        verbose_name='restaurant_phone_number',
+        max_length=15,
+    )
+
+    email = models.EmailField(
+        verbose_name='restaurant_email',
+        blank=True,
+    )
+
+    opening_hours = models.CharField(
+        verbose_name='restaurant_opening_hours',
+        max_length=50,
+    )
+
+    LOW = 'LOW'
+    MEDIUM = 'MEDIUM'
+    HIGH = 'HIGH'
+    PRICE_LEVEL_CHOICES = (
+        (LOW, '$'),
+        (MEDIUM, '$$'),
+        (HIGH, '$$$'),
+    )
+
+    price_level = models.CharField(
+        verbose_name='restaurant_price_level',
+        max_length=6,
+        choices=PRICE_LEVEL_CHOICES,
+    )
+
+    # category = models.CharField(
+    #     verbose_name='restaurant_category',
+    #     on_delete=models.SET_NULL,
+    #     related_name='restaurants',
+    #     null=True,
+    #     blank=True,
+    #
+    # )
+
+    ASIAN = 'ASIAN'
+    ITALIAN = 'ITALIAN'
+    MEXICAN = 'MEXICAN'
+    SWISS = 'SWISS'
+    CATEGORY_CHOICES = (
+        (ASIAN, ASIAN),
+        (ITALIAN, ITALIAN),
+        (MEXICAN, MEXICAN),
+        (SWISS, SWISS)
+    )
+
+    restaurant_category = models.CharField(
+        verbose_name='restaurant_category',
+        max_length=30,
+        choices=CATEGORY_CHOICES,
+        null=True,
+        blank=True
+    )
+
+    created = models.DateTimeField(
+        verbose_name='date_created',
+        auto_now_add=True,
+    )
+
+    modified = models.DateTimeField(
+        verbose_name='date_modified',
+        auto_now=True,
+    )
+
+    image = models.ImageField(
+        verbose_name='restaurant_image',
+        blank=True
     )
 
     timestamp = models.DateTimeField(
@@ -43,43 +122,5 @@ class Restaurant(models.Model):
         auto_now_add=True  # adds date and time automatically to the restaurant.
     )
 
-    def __str__(self):
-        return f'{self.restaurant} / {self.restaurantpic}/ {self.title} / {self.content}'
-
-    # the like method many to many
-    # many to many creates a new table which connects the posts to the user.
-    rated_by = models.ManyToManyField(
-        to=settings.AUTH_USER_MODEL,
-        related_name='ratings',
-        blank=True
-    )
-
-    class Meta:
-        ordering = ('-timestamp',)
-
-
-class Comments(models.Model):
-
-    comment = models.TextField(
-        verbose_name='comment',
-        blank=True,
-    )
-
-    users = models.ForeignKey(
-        verbose_name='user',
-        to=Restaurant,
-        related_name='comments',
-        on_delete=models.CASCADE,
-        blank=True
-    )
-
-    restaurant = models.ForeignKey(
-        verbose_name='restaurant',
-        to=settings.AUTH_RESTAURANT_MODEL,
-        on_delete=models.CASCADE,
-        related_name='comments',
-        blank=True
-    )
-
-    def __str__(self):
-        return f' ID: {self.ID} / Comment: {self.comment}/ Restaurant: {self.restaurant}/ User:{self.user}/'
+    # class Meta:
+    #     ordering = ('-timestamp')
