@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/group-projects/aquarius
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/group-projects/aquarius:latest
     ports:
       - "8000:8000"
     env_file:
