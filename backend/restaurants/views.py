@@ -52,6 +52,7 @@ class CreateNewRestaurant(CreateAPIView):
             data=request.data,
             context=dict(request=request),
         )
+        serializer.is_valid(raise_exception=True)
         restaurant = serializer.create(serializer.validated_data)
         return Response(RestaurantSerializer(restaurant).data, status.HTTP_201_CREATED)
 
