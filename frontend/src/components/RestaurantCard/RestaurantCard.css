@@ -1,0 +1,18 @@
+
+.RestaurantCard {
+    border: 1px solid red;
+    margin: 10px;
+}
+
+.RestaurantCard-img {
+    width: 271px;
+    height: 284px;
+    object-fit: cover;
+}
+
+.title {
+    display: inline-block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    box-shadow: 0 19px 0 -15px black;
+}

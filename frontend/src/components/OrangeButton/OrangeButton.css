@@ -1,0 +1,9 @@
+#OrangeButton {
+  width: 200px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #e47d31;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+}

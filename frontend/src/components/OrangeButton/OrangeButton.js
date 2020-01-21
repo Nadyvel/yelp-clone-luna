@@ -1,9 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
+import './OrangeButton.css';
 
 const orangeButton = (props) => {
     return (
-        <button>{props.content}</button>
+        <button id="OrangeButton">{props.content}</button>
     )
 }
 
