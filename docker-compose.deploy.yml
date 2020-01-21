@@ -10,10 +10,10 @@ services:
       - static-files:/static-files
       - /etc/letsencrypt:/etc/letsencrypt
       - media-files:/media-files
-  backend:
-    image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/group-projects/aquarius
-    command: "sh /scripts/run.sh"
 
+  backend:
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/group-projects/aquarius:latest
+    command: "sh /scripts/run.sh"
     env_file:
       - ./prod.env
     depends_on:
@@ -21,12 +21,14 @@ services:
     volumes:
       - static-files:/static-files
       - ./scripts:/scripts
+
   postgres:
     image: postgres:latest
     volumes:
       - luna:/var/lib/postgresql/data
     env_file:
       - ./prod.env
+
 volumes:
   luna:
   static-files:
