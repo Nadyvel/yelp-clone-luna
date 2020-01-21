@@ -34,8 +34,8 @@ COPY ./backend /backend
 
 
 # pass the script (skip that step if you don't have any scripts)
-#COPY ./scripts/* /scripts/
-#RUN chmod +x /scripts/*
+COPY ./scripts/* /scripts/
+RUN chmod +x /scripts/*
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs && apt-get install -y npm
 
