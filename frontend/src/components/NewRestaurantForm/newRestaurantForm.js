@@ -25,7 +25,11 @@ const NewRestaurantForm = props => {
 
 return(
     <div className="restaurantForm">
+        <div>
         <h5 className="restaurantTitle">CREATE NEW RESTAURANT</h5>
+        <span className="headLine"></span>
+        </div>
+
         <form className="formWrapper">
 
             <p className="mainTitle">Basic</p>
@@ -62,8 +66,9 @@ return(
              </div>
             </div>
             
-            <OrangeButton content="SUBMIT"/> 
-
+            <div className="submitButton">
+                <OrangeButton content="SUBMIT"/> 
+            </div>
         </form>
     </div>
 )

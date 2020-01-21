@@ -22,10 +22,10 @@ class Footer extends React.Component {
                   </ul>
                 </div>
                 <div className="rightFooter">
-                    <img src={facebook} alt="facebookIcon" />
-                    <img src={twitter} alt="twitterIcon" />
-                    <img src={googleplus} alt="googleIcon" />
-                    <img src={instagram} alt="instagramIcon" />
+                    <img className="imgFooter" src={facebook} alt="facebookIcon" />
+                    <img className="imgFooter" src={twitter} alt="twitterIcon" />
+                    <img className="imgFooter" src={googleplus} alt="googleIcon" />
+                    <img className="imgFooter" src={instagram} alt="instagramIcon" />
                 </div>
             </div>
         )
