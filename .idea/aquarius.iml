@@ -19,6 +19,9 @@
     <orderEntry type="jdk" jdkName="Remote Python 3.7.6 Docker Compose (backend at [C:\Users\41794\Desktop\luna\docker-compose.yml])" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="TestRunnerService">
+    <option name="projectConfiguration" value="pytest" />
+    <option name="PROJECT_TEST_RUNNER" value="pytest" />
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
   </component>

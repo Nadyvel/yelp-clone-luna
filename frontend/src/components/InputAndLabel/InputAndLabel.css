@@ -1,0 +1,19 @@
+.formLabels {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.labels {
+    width: 370px;
+    height: 24px;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: bold;
+    color: #979797;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+}
