@@ -150,10 +150,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static-files/'
-STATIC_ROOT = '/static-files'
+STATIC_ROOT = '/static-files/'
 
 MEDIA_URL = '/media-files/'
-MEDIA_ROOT = '/media-files'
+MEDIA_ROOT = '/media-files/'
 
 AUTH_USER_MODEL = 'users.User'
 
