@@ -6,8 +6,8 @@ from restaurants.views import GetDeleteUpdateRestaurant, GetRestaurantsOfUser, \
 urlpatterns = [
 
     path('', ListRestaurants.as_view()),
-    path('api/restaurants/new/', CreateNewRestaurant.as_view()),
-    path('api/restaurants/<int:restaurant_id>/', GetDeleteUpdateRestaurant.as_view()),
-    path('api/restaurants/user/<int:user_id>/', GetRestaurantsOfUser.as_view()),
-    path('api/restaurants/category/<str:category>/', GetRestaurantsByCategory.as_view()),
+    path('new/', CreateNewRestaurant.as_view()),
+    path('<int:restaurant_id>/', GetDeleteUpdateRestaurant.as_view()),
+    path('user/<int:user_id>/', GetRestaurantsOfUser.as_view()),
+    path('category/<str:category>/', GetRestaurantsByCategory.as_view()),
 ]
