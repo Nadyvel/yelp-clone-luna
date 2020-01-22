@@ -10,6 +10,10 @@ const Header = props => {
       props.history.push('/login');
   }
 
+  const handleSignUp = () => {
+    props.history.push('/registration');
+  }
+
   return <div className="header-wrapper">
     <div className="header-left">
       <img src={luna} alt="logo" />
@@ -19,7 +23,7 @@ const Header = props => {
       <p className="header-font-size">Search</p>
       <p className="header-font-size">Profile</p>
       <div>
-        <button className="header-button-left">SIGNUP</button>
+        <button onClick={handleSignUp} className="header-button-left">SIGNUP</button>
         <button onClick={handleClick} className="header-button-right">LOGIN</button>
       </div>
     </div>
