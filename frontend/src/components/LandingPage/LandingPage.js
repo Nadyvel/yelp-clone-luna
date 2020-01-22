@@ -7,7 +7,6 @@ import {fetchRestaurantDetails} from '../../store/action/restaurantActions';
 
 const LandingPage = (props) => {
     useEffect(() => {
-        console.log('props', props)
         props.dispatch(fetchRestaurantDetails())
     }, []);
     return (
@@ -15,15 +14,17 @@ const LandingPage = (props) => {
             <div>
                 <RestaurantBanner/>
             </div>
-            <div className="restaurant-card-wrapper">
-                <h2 className="title">BEST RATED RESTAURANTS</h2>
-                <div className="RestaurantCard-section">
-
-                {props.restaurants.length > 0 &&
-                        [props.restaurants].map((restaurant, index) => {
+            <div className="body">
+                <div className="restaurant-card-wrapper">
+                    <h2 className="title">BEST RATED RESTAURANTS</h2>
+                    <div className="RestaurantCard-section">
+                        {props.restaurants.length > 0 &&
+                        props.restaurants.map((restaurant, index) => {
+                            console.log('in da map', restaurant)
                             return <RestaurantCard key={index} restaurant={restaurant}/>
                         })
-                }
+                        }
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,7 +10,8 @@ const InputAndLabel= (props) => {
         <div className="formLabels">
             <div className="inputWrapper">
             <label className="labels">{props.label}</label>
-            <input name={props.name} value={props.value} onChange={props.onChange}/>
+            <input className="inputStyle" placeholder={props.placeholder} name={props.name} 
+            value={props.value} onChange={props.onChange}/>
 
             </div>
         </div>

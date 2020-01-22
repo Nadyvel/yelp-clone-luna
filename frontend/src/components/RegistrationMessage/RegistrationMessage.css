@@ -1,0 +1,33 @@
+.registrationMessageTitle {
+    display: flex;
+    justify-content: center;
+   font-family: Helvetica;
+   font-size: 24px;
+   width: 100vw;
+   font-weight: bold;
+   color: #4c4c4c;
+   padding-top: 30px;
+   margin-bottom: 80px;
+}
+
+.registrationMessageForm {
+    width: 1440px;
+    height: 802px;
+    background-color: #f8f8f8;
+}
+
+.registrationMessage {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 100vw;
+    height: 144px;
+    font-family: Helvetica;
+    font-size: 20px;
+    color: #4c4c4c;
+}
+
+.lineMessage {
+    margin: 0;
+}

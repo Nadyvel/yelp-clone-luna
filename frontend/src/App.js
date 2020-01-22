@@ -2,14 +2,13 @@ import React from "react";
 import Header from './components/Header/Header';
 import "./App.css";
 import { connect } from "react-redux";
-import LandingPage from "./components/LandingPage/LandingPage";
 import Footer from "./components/Footer/footer"
 
-const App = () => {
+const App = (props) => {
   return (
       <div>
         <Header />
-        <LandingPage/>
+        {props.children}
         <Footer />
       </div>
 )};
