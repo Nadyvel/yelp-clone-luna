@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 
 # Create your views here.
+from django.db.models import Q
 from rest_framework import filters
 
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
@@ -19,8 +20,16 @@ class ListAllUsers(ListCreateAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated, IsUserOrReadOnly]
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['username']
+
+    def filter_queryset(self, queryset):
+        search_string = self.request.query_params.get('search')
+        if search_string:
+            queryset = queryset.filter(
+                Q(username__icontains=search_string) |
+                Q(first_name__icontains=search_string) |
+                Q(last_name__icontains=search_string)
+            )
+        return queryset
 
 
 # Get specific user profile
