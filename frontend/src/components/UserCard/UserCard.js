@@ -3,16 +3,15 @@ import {connect} from "react-redux";
 import './UserCard.css';
 
 const UserCard = props => {
-    console.log(props.user.username)
     return (
         <div className="UserCard">
             <div className="UpperUserCard-Container">
                 <div className="UpperLeft-UserCard">
-                    <h3>{props.user.username}</h3>
+                    <img src={props.user.image} alt="user-image"/>
                 </div>
                 <div className="UpperRight-Upper-Container">
                     <div className="UpperRight-Upper-UserCard">
-                        UserName
+                        <h3 className="username">{props.user.username}</h3>
                     </div>
                     <div className="UpperRight-Lower-UserCard">
                         Review Count
@@ -20,7 +19,7 @@ const UserCard = props => {
                 </div>
             </div>
             <div className="LowerUserCard">
-                UserBio
+                <p className={"description"}>{props.user.description}</p>
             </div>
 
 

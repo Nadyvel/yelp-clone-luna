@@ -5,6 +5,7 @@ import { fetchRestaurantDetails } from "../../store/action/restaurantAction";
 import { Route, Link } from "react-router-dom";
 import ListRestaurants from "../ListRestaurants/ListRestaurants";
 import ListUsers from "../ListUsers/ListUsers";
+import ListReviews from "../ListReviews/ListReviews";
 
 const SearchPage = (props) => {
         useEffect(() => {
@@ -34,7 +35,7 @@ const SearchPage = (props) => {
                 </div>
             </div>
             <Route exact path="/search/restaurants" component={ListRestaurants}/>
-            <Route exact path="/search/reviews" component={SearchPage}/>
+            <Route exact path="/search/reviews" component={ListReviews}/>
             <Route exact path="/search/users" component={ListUsers}/>
         </div>
     )

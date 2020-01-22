@@ -1,7 +1,11 @@
 //------------------ fetch restaurant Details
 
 export const fetchRestaurantDetails = () => async (dispatch, getState) => {
-    const headers = new Headers({})
+    const token = getState().loginReducer.tokens.access;
+    const headers = new Headers({
+        "content-type": "application/json",
+        "Authorization": "Bearer " + token
+    });
     const config = {
         method: "GET",
         headers

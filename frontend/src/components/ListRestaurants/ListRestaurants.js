@@ -1,10 +1,11 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
+import './ListRestaurants.css';
 
 const ListRestaurants = (props) => {
     return (
-        <Fragment>
+        <div className="ListRestaurant-Container">
                     {
             props.restaurants.length > 0 &&
                 props.restaurants.map((restaurant, index) => {
@@ -13,7 +14,7 @@ const ListRestaurants = (props) => {
                 })
         }
 
-        </Fragment>
+        </div>
     )
 }
 
