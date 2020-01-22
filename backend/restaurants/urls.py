@@ -9,5 +9,5 @@ urlpatterns = [
     path('new/', CreateNewRestaurant.as_view()),
     path('<int:restaurant_id>/', GetDeleteUpdateRestaurant.as_view()),
     path('user/<int:user_id>/', GetRestaurantsOfUser.as_view()),
-    path('category/<str:category>/', GetRestaurantsByCategory.as_view()),
+    path('category/', GetRestaurantsByCategory.as_view()),
 ]

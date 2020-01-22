@@ -1,7 +1,9 @@
 import django_filters
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
 from django.db.models import Q
 from django.shortcuts import render
+
 
 # Create your views here.
 # creates post
@@ -14,6 +16,8 @@ from rest_framework.response import Response
 from restaurants.models import Restaurant
 from restaurants.permissions import IsOwnerOfRestaurantOrReadOnly
 from restaurants.serializers import RestaurantSerializer
+
+User = get_user_model()
 
 
 # create restaurant
@@ -81,12 +85,10 @@ class GetRestaurantsOfUser(ListAPIView):
 
 # get all restaurants filtered by category
 class GetRestaurantsByCategory(ListAPIView):
+    queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
-    lookup_url_kwarg = 'category'
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
 
     def get_queryset(self):
-        category_id = self.kwargs['category']
-        restaurants = Restaurant.objects.get(id=category_id)
-        ordered_restaurants = restaurants.all().order_by('timestamp').reverse()
-        return ordered_restaurants
+        search_string = self.request.query_params.get('category')
+        query_result = Restaurant.objects.filter(category__icontains=search_string).order_by('timestamp').reverse()
+        return query_result
