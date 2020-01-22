@@ -3,11 +3,11 @@ from rest_framework import permissions
 
 class IsOwnerOfRestaurantOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        if request.restaurant.is_superuser:
+        if request.user.is_superuser:
             return True
         if request.method == 'GET':
             return True
-        if request.restaurant == obj.owner:
+        if request.user == obj.owner:
             return True
         else:
             return False
