@@ -28,7 +28,8 @@ class Review(models.Model):
         blank=True
     )
 
-    comments = models.TextField(
+    comments = models.ManyToManyField(
+        to=settings.AUTH_USER_MODEL,
         verbose_name='reviews_comments',
         blank=True,
     )
