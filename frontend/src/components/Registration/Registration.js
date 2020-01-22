@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './Registration.css';
 import InputAndLabel from "../InputAndLabel/InputAndLabel";
 import OrangeButton from "../OrangeButton/OrangeButton";
+import { withRouter } from "react-router-dom";
 
 
 const Registration = props => {
@@ -36,4 +37,10 @@ return(
 
 }
 
-export default connect()(Registration);
+const mapStateToProps = state => {
+    return {
+        tokens: state.loginReducer.tokens,
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Registration))

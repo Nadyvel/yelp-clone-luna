@@ -9,15 +9,19 @@ import App from './App';
 import * as serviceWorker from "./serviceWorker";
 import NewRestaurantForm from "./components/NewRestaurantForm/newRestaurantForm";
 import SearchPage from "./components/SearchPage/Searchpage";
+import Login from "./components/Login/Login";
+import Registration from "./components/Registration/Registration";
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
                 <App>
-                    <Route exact path="/restaurants" component={LandingPage}/>
+                    <Route exact path="/" component={LandingPage}/>
+                    <Route exact path="/login" component={Login}/>
                     <Route exact path="/restaurants/new/" component={NewRestaurantForm}/>
-                    <Route path="/search" component={SearchPage}/>
+                    <Route exact path="/search" component={SearchPage}/>
+                    <Route exact path="/registration" component={Registration}/>
                 </App>
             </Switch>
         </Router>
