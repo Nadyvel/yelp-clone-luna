@@ -6,6 +6,7 @@ import OrangeButton from "../OrangeButton/OrangeButton";
 import { withRouter } from "react-router-dom"
 import {loginAction} from '../../store/action/loginAction';
 
+
 const Login = props => {
     let [state, setState] = useState({
       username: "",
@@ -18,6 +19,9 @@ const Login = props => {
     const handleSubmit = e => {
         e.preventDefault();
         props.dispatch(loginAction(state.username, state.password))
+        if (props.tokens.access) {
+            props.history.push('/restaurants');
+        }
     }
 
 return(
