@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import './SearchPage.css';
-import RestaurantCard from "../RestaurantCard/RestaurantCard";
+import { fetchRestaurantDetails } from "../../store/action/restaurantAction";
+import { Route, Link } from "react-router-dom";
+import ListRestaurants from "../ListRestaurants/ListRestaurants";
+import ListUsers from "../ListUsers/ListUsers";
+import ListReviews from "../ListReviews/ListReviews";
 
 const SearchPage = (props) => {
+        useEffect(() => {
+        props.dispatch(fetchRestaurantDetails())
+    }, []);
     return (
         <div className="Body">
             <div className="SearchBarContainer">
@@ -22,25 +29,19 @@ const SearchPage = (props) => {
             </div>
             <div className="SearchCategoryBody">
                 <div className="SearchCategoryContainer">
-                    <h1 className="Link">Restaurants</h1>
-                    <h1 className="Link">Reviews</h1>
-                    <h1 className="Link">Users</h1>
-                </div>
-                <div>
-                    {
-                        props.restaurants.length > 0 &&
-                        props.restaurants.map((restaurant, index) => {
-                            return <RestaurantCard key={index} restaurant={restaurant}/>
-                        })
-                    }
+                    <Link to="/search/restaurants">Restaurants</Link>
+                    <Link to="/search/reviews">Reviews</Link>
+                    <Link to="/search/users">Users</Link>
                 </div>
             </div>
+            <Route exact path="/search/restaurants" component={ListRestaurants}/>
+            <Route exact path="/search/reviews" component={ListReviews}/>
+            <Route exact path="/search/users" component={ListUsers}/>
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    console.log('mapStateToProps:', state)
     return {
         restaurants: state.restaurantReducer.restaurants
     };
