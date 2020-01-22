@@ -24,6 +24,7 @@ urlpatterns = [
     path('api/users/', include('users.urls')),
     path('api/', include('users.urls')),
     path('api/reviews/', include('reviews.urls')),
+    path('api/review/comment', include('comments.urls')),
 
 
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),

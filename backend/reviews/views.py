@@ -57,7 +57,7 @@ class DeleteUpdateReview(RetrieveUpdateDestroyAPIView):
 # get all reviews from one user
 class GetReviewsOfUser(ListAPIView):
     serializer_class = ReviewSerializer
-    lookup_url_kwarg = 'owner_id'
+    lookup_url_kwarg = 'user_id'
 
     def get_queryset(self):
         user_id = self.kwargs['user_id']

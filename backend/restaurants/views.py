@@ -16,8 +16,6 @@ from rest_framework.response import Response
 from restaurants.models import Restaurant
 from restaurants.permissions import IsOwnerOfRestaurantOrReadOnly
 from restaurants.serializers import RestaurantSerializer
-from reviews.models import Review
-from reviews.serializers import ReviewSerializer
 
 User = get_user_model()
 
