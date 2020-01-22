@@ -15,6 +15,11 @@ const Login = props => {
     const handleChange = e =>
         setState({ ...state, [e.target.name]: e.target.value });
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.dispatch(loginAction())
+    }
+
 return(
     <div className="loginForm">
         <div>
@@ -22,7 +27,7 @@ return(
         <span className="headLine"></span>
         </div>
 
-        <form className="loginWrapper">
+        <form onSubmit={handleSubmit} className="loginWrapper">
 
             <div className="loginRow1">
                 <InputAndLabel placeholder={"Username"} name="username" value={state.username} 
@@ -39,12 +44,11 @@ return(
         </form>
     </div>
 )
-
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
-        tokens: state.loginReducer.tokens
+        tokens: state.loginReducer.tokens,
     }
 }
 
