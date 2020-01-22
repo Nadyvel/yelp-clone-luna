@@ -9,7 +9,12 @@
 .SearchBarContainer {
     display: flex;
     width: 100%;
+    height: 3rem;
     justify-content: center;
+}
+
+.form {
+    height: 100%;
 }
 
 .SearchBar {
@@ -19,6 +24,17 @@
 .SearchBar input {
     width: 100%;
     height: 100%;
+    font-size: 20px;
+    outline: none;
+
+}
+
+.select {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
 }
 
 .SelectCategory {

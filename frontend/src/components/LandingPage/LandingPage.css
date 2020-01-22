@@ -5,7 +5,7 @@
     box-shadow: 0 19px 0 -15px #e47d31;
 }
 
-.body {
+body {
     background-color: #f8f8f8;
 }
 
@@ -18,7 +18,7 @@
 
 .RestaurantCard-section {
     display: flex;
-    height: 410px;
+    flex-flow: row wrap;
     justify-content: center;
     margin: 10px;
 }

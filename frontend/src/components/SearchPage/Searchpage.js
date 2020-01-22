@@ -11,7 +11,13 @@ const SearchPage = (props) => {
                     <input placeholder="Search"/>
                 </div>
                 <div className="SelectCategory">
-                    <input placeholder="Search"/>
+                    <form className='form'>
+                        <select className="select" name="category">
+                            <option value="res">Restaurants</option>
+                            <option value="rev">Review</option>
+                            <option value="use">Users</option>
+                        </select>
+                    </form>
                 </div>
             </div>
             <div className="SearchCategoryBody">
