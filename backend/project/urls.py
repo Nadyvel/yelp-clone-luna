@@ -19,7 +19,7 @@ from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('api/admin/', admin.site.urls),
-    # path('api/home/', admin.site.urls),
+    path('api/search/', include('search.urls')),
     path('api/restaurants/', include('restaurants.urls')),
     path('api/users/', include('users.urls')),
     path('api/', include('users.urls')),
