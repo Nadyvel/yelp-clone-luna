@@ -20,7 +20,7 @@ const Login = props => {
         e.preventDefault();
         props.dispatch(loginAction(state.username, state.password))
         if (props.tokens.access) {
-            props.history.push('/restaurants');
+            props.history.push('/');
         }
     }
 

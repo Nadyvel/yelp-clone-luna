@@ -17,7 +17,7 @@ export const loginAction = (username, password) => async (dispatch, getState) =>
     
     const response = await fetch('https://luna-aquarius.propulsion-learn.ch/api/token/', config);
     const data = await response.json();
-    console.log(data)
+    console.log('logging in: ', data)
     const action = {
         type: 'LOGIN_USER',
         payload: data,

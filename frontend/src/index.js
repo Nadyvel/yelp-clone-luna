@@ -11,6 +11,7 @@ import NewRestaurantForm from "./components/NewRestaurantForm/newRestaurantForm"
 import SearchPage from "./components/SearchPage/Searchpage";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
+import Profile from "./components/Profile/Profile";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -23,6 +24,7 @@ ReactDOM.render(
                     <Route exact path="/restaurants/new/" component={NewRestaurantForm}/>
                     <Route exact path="/search" component={SearchPage}/>
                     <Route exact path="/registration" component={Registration}/>
+                    <Route exact path="/profile" component={Profile}/>
                 </App>
             </Switch>
         </Router>
