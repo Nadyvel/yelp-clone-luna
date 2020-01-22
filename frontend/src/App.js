@@ -1,15 +1,19 @@
 import React from "react";
-import Header from './components/Header/Header';
 import "./App.css";
 import { connect } from "react-redux";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Footer from "./components/Footer/footer"
+import Header from "./components/header/Header";
+import VerificationForm from "./components/VerificationForm/VerificationForm";
+import Login from "./components/Login/Login";
 
 const App = () => {
   return (
       <div>
         <Header />
-        <LandingPage/>
+        <LandingPage />
+        <Login/>
+        
         <Footer />
       </div>
 )};

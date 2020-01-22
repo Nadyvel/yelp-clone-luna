@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import './Login.css';
 import InputAndLabel from "../InputAndLabel/InputAndLabel";
 import OrangeButton from "../OrangeButton/OrangeButton";
-
+import { withRouter } from "react-router-dom"
+import {loginAction} from '../../store/action/loginAction';
 
 const Login = props => {
     let [state, setState] = useState({
@@ -41,4 +42,10 @@ return(
 
 }
 
-export default connect()(Login);
+const mapStateToProps = (state) => {
+    return {
+        tokens: state.loginReducer.tokens
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Login))
