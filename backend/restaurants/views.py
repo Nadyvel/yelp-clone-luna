@@ -17,6 +17,7 @@ from rest_framework.response import Response
 from restaurants.models import Restaurant
 from restaurants.permissions import IsOwnerOfRestaurantOrReadOnly
 from restaurants.serializers import RestaurantSerializer
+from reviews.models import Review
 
 User = get_user_model()
 
@@ -97,7 +98,7 @@ class GetRestaurantsByCategory(ListAPIView):
 
 class ListFourBestRestaurants(GenericAPIView):
     queryset = Review.objects.filter(restaurant=1)
-    serializer_class = ReviewSerializerRating
+    # serializer_class = ReviewSerializerRating
 
     def get(self, request, **kwargs):
         serializer = self.get_serializer(self.get_queryset(), many=True)

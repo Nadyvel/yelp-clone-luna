@@ -22,6 +22,17 @@ class Review(models.Model):
         on_delete=models.CASCADE,
     )
 
+    likes = models.ManyToManyField(
+        to=settings.AUTH_USER_MODEL,
+        related_name='reviews_likes',
+        blank=True
+    )
+
+    comments = models.TextField(
+        verbose_name='reviews_comments',
+        blank=True,
+    )
+
     content = models.TextField(
         verbose_name='review_content',
     )
@@ -31,14 +42,14 @@ class Review(models.Model):
         validators=[MaxValueValidator(5), MinValueValidator(1)]
     )
 
+    created = models.DateTimeField(
+        verbose_name='date_created',
+        auto_now_add=True,
+    )
+
     modified = models.DateTimeField(
         verbose_name='date_modified',
         auto_now=True,
-    )
-
-    timestamp = models.DateTimeField(
-        verbose_name='timestamp',
-        auto_now_add=True  # adds date and time automatically to the restaurant.
     )
 
     class Meta:
