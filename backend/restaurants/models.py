@@ -49,7 +49,7 @@ class Restaurant(models.Model):
         max_length=15,
     )
 
-    email = models.EmailField(
+    restaurant_email = models.EmailField(
         verbose_name='restaurant_email',
         blank=True,
     )
@@ -83,29 +83,33 @@ class Restaurant(models.Model):
     #
     # )
 
-    ASIAN = 'ASIAN'
-    ITALIAN = 'ITALIAN'
-    MEXICAN = 'MEXICAN'
-    SWISS = 'SWISS'
-    CATEGORY_CHOICES = (
-        (ASIAN, ASIAN),
-        (ITALIAN, ITALIAN),
-        (MEXICAN, MEXICAN),
-        (SWISS, SWISS)
+    # ASIAN = 'ASIAN'
+    # ITALIAN = 'ITALIAN'
+    # MEXICAN = 'MEXICAN'
+    # SWISS = 'SWISS'
+    # CATEGORY_CHOICES = (
+    #     (ASIAN, ASIAN),
+    #     (ITALIAN, ITALIAN),
+    #     (MEXICAN, MEXICAN),
+    #     (SWISS, SWISS)
+    # )
+
+    category = models.CharField(
+        verbose_name='category',
+        max_length=150,
+        choices=(
+            ('Asian', 'Asian'),
+            ('Italian', 'Italian'),
+            ('Mexican', 'Mexican'),
+            ('Swiss', 'Swiss'),
+        ),
+        default='Asian'
     )
 
-    restaurant_category = models.CharField(
-        verbose_name='restaurant_category',
-        max_length=30,
-        choices=CATEGORY_CHOICES,
-        null=True,
-        blank=True
-    )
-
-    created = models.DateTimeField(
-        verbose_name='date_created',
-        auto_now_add=True,
-    )
+    # created = models.DateTimeField(
+    #     verbose_name='date_created',
+    #     auto_now_add=True,
+    # )
 
     modified = models.DateTimeField(
         verbose_name='date_modified',
