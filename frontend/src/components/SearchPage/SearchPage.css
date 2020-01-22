@@ -59,4 +59,12 @@
 
 .Link {
     padding: 1rem;
+     color: red;
+}
+
+.RestaurantSearch {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 10px;
 }
