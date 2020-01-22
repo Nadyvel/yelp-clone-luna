@@ -1,6 +1,6 @@
 from django.urls import path
 
-from backend.users.views import ListAllUsers, GetMyProfile, GetSpecificUserById
+from users.views import ListAllUsers, GetMyProfile, GetSpecificUserById
 
 urlpatterns = [
 
