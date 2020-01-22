@@ -1,18 +1,12 @@
 const initialState = {
-    username: null,
-    first_name: null,
-    last_name: null,
-    email: null,
-    password: null,
-    location: null,
-    profile_description: null
+    users: []
 }
 
 export const userReducer = (state = initialState, action) => {
-    if (action.type === "userDetails") {
+    if (action.type === "users") {
         return {
             ...state,
-            userDetails: action.payload
+            users: action.payload
         };
     }
     return state;

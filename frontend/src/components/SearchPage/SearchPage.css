@@ -60,3 +60,10 @@
 .Link {
     padding: 1rem;
 }
+
+.RestaurantSearch {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 10px;
+}

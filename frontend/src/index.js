@@ -17,7 +17,7 @@ ReactDOM.render(
                 <App>
                     <Route exact path="/restaurants" component={LandingPage}/>
                     <Route exact path="/restaurants/new/" component={NewRestaurantForm}/>
-                    <Route exact path="/search" component={SearchPage}/>
+                    <Route path="/search" component={SearchPage}/>
                 </App>
             </Switch>
         </Router>
@@ -28,4 +28,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-

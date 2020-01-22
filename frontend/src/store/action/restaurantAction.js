@@ -6,7 +6,6 @@ export const fetchRestaurantDetails = () => async (dispatch, getState) => {
         method: "GET",
         headers
     };
-    console.log('hello')
     const response = await fetch('https://luna-aquarius.propulsion-learn.ch/api/restaurants/', config);
     const data = await response.json();
     const action = {
