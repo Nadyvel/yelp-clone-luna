@@ -25,6 +25,18 @@ class CreateReview(CreateAPIView):
         review.save()
 
 
+# lists reviews for a single restaurant
+class ListReviewsForSingleRestaurant(ListAPIView):
+    permission_classes = []
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    lookup_url_kwarg = 'restaurant_id'
+
+    def get_queryset(self):
+        query_result = Review.objects.filter(restaurant=self.kwargs.get('restaurant_id'))
+        return query_result
+
+
 # gets review by id
 class ListSpecificReviewById(ListCreateAPIView):
     serializer_class = ReviewSerializer
