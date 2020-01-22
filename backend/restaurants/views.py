@@ -9,13 +9,15 @@ from django.shortcuts import render
 # creates post
 from django_filters.rest_framework import filters
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, \
+    GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from restaurants.models import Restaurant
 from restaurants.permissions import IsOwnerOfRestaurantOrReadOnly
 from restaurants.serializers import RestaurantSerializer
+from reviews.models import Review
 
 User = get_user_model()
 
@@ -92,3 +94,12 @@ class GetRestaurantsByCategory(ListAPIView):
         search_string = self.request.query_params.get('category')
         query_result = Restaurant.objects.filter(category__icontains=search_string).order_by('timestamp').reverse()
         return query_result
+
+
+class ListFourBestRestaurants(GenericAPIView):
+    queryset = Review.objects.filter(restaurant=1)
+    # serializer_class = ReviewSerializerRating
+
+    def get(self, request, **kwargs):
+        serializer = self.get_serializer(self.get_queryset(), many=True)
+        return Response(serializer.data)
