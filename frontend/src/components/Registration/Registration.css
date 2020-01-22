@@ -1,0 +1,33 @@
+.registrationTitle {
+    display: flex;
+    justify-content: center;
+   font-family: Helvetica;
+   font-size: 24px;
+   font-weight: bold;
+   color: #4c4c4c;
+   padding-bottom: 0;
+   margin: 0;
+   width: 100vw;
+   padding-top: 40px;
+}
+
+.registrationButton {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.registrationRow1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    width: 100vw;
+    padding-top: 50px;
+}
+
+
+.registrationForm {
+    background-color: #f8f8f8;
+    width: 1440px;
+    height: 802px;
+}

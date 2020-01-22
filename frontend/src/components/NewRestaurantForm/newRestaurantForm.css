@@ -2,8 +2,6 @@
   background-color: #f8f8f8;
 }
 
-
-
 input {
   width: 370px;
   height: 50px;
@@ -19,10 +17,20 @@ input {
   font-size: 24px;
   font-weight: bold;
   color: #4c4c4c;
+  padding-bottom: 0;
+  margin: 0;
  }
 
- p {
-     width: 23px;
+.headLine {
+  display: flex;
+  justify-content: center;
+  border-bottom: 4px solid #e47d31;
+  width: 160px;
+  
+}
+
+.mainTitle {
+  width: 23px;
   height: 23px;
   font-family: Karla;
   font-size: 20px;
@@ -76,4 +84,7 @@ input {
   margin-top: 7px;
 }
 
-
+.submitButton {
+  display: flex;
+  justify-content: center;
+}
