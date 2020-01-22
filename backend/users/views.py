@@ -2,14 +2,13 @@ from django.contrib.auth import get_user_model
 
 # Create your views here.
 from django.db.models import Q
-from rest_framework import filters
 
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 
-from backend.users.permissions import IsUserOrReadOnly
+from users.permissions import IsUserOrReadOnly
 from users.serializers import UserSerializer
 
 User = get_user_model()
