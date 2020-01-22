@@ -2,8 +2,18 @@ import React from "react";
 import "./Header.css";
 import luna from "../../assets/svg/logo.svg";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-const Header = () => {
+const Header = props => {
+
+  const handleClick = () => {
+      props.history.push('/login');
+  }
+
+  const handleSignUp = () => {
+    props.history.push('/registration');
+  }
+
   return <div className="header-wrapper">
     <div className="header-left">
       <img src={luna} alt="logo" />
@@ -13,11 +23,12 @@ const Header = () => {
       <p className="header-font-size">Search</p>
       <p className="header-font-size">Profile</p>
       <div>
-        <button className="header-button-left">SIGNUP</button>
-        <button className="header-button-right">LOGIN</button>
+        <button onClick={handleSignUp} className="header-button-left">SIGNUP</button>
+        <button onClick={handleClick} className="header-button-right">LOGIN</button>
       </div>
     </div>
   </div>
 };
 
-export default connect()(Header);
+
+export default withRouter(connect()(Header));
