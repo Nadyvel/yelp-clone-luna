@@ -86,6 +86,14 @@ class Restaurant(models.Model):
         default='Asian'
     )
 
+    @property
+    def average_rating(self):
+        reviews = self.reviews.all()
+        if reviews:
+            avg = sum(review.rating for review in reviews) / len(reviews)
+            return avg
+        return 0
+
     modified = models.DateTimeField(
         verbose_name='date_modified',
         auto_now=True,
