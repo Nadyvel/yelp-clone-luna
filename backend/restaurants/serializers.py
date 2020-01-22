@@ -8,10 +8,10 @@ class RestaurantSerializer (serializers.ModelSerializer):
 
     total_ratings = serializers.SerializerMethodField()  # searches for a function which is called get_total_ratings and executes it
 
+    def get_total_ratings(self, restaurant):
+        return restaurant.reviews.count()   # gives all the relations and the amount of ratings for the restaurant
+
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ['id', 'user', 'total_ratings', 'average_rating']
         read_only_fields = ['id', 'user', 'total_ratings']
-
-    def total_ratings(self, restaurant):
-        return restaurant.rated_by.count()   # gives all the relations and the amount of ratings for the restaurant

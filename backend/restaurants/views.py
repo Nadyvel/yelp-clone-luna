@@ -2,12 +2,11 @@ import django_filters
 from django.contrib.auth import get_user_model
 
 from django.db.models import Q
-from django.shortcuts import render
+
 
 
 # Create your views here.
-# creates post
-from django_filters.rest_framework import filters
+
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, \
     GenericAPIView
@@ -18,6 +17,7 @@ from restaurants.models import Restaurant
 from restaurants.permissions import IsOwnerOfRestaurantOrReadOnly
 from restaurants.serializers import RestaurantSerializer
 from reviews.models import Review
+from reviews.serializers import ReviewSerializer
 
 User = get_user_model()
 
@@ -97,9 +97,11 @@ class GetRestaurantsByCategory(ListAPIView):
 
 
 class ListFourBestRestaurants(GenericAPIView):
-    queryset = Review.objects.filter(restaurant=1)
-    # serializer_class = ReviewSerializerRating
+
+    serializer_class = RestaurantSerializer
 
     def get(self, request, **kwargs):
-        serializer = self.get_serializer(self.get_queryset(), many=True)
+        queryset = Restaurant.objects.all()
+        response = sorted(queryset, key=lambda restaurant: restaurant.average_rating, reverse=True)[:4]
+        serializer = self.get_serializer(response, many=True)
         return Response(serializer.data)
