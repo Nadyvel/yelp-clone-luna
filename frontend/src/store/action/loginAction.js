@@ -1,31 +1,27 @@
 
-export const loginAction = () => (dispatch, getState) => {
-    const token = getState().loginReducer.tokens.access
+export const loginAction = (username, password) => async (dispatch, getState) => {
     const myHeaders = new Headers({
         "content-type": "application/json",
-        "Authorization": "Bearer " + token
     });
 
-    // const body = {
-    //     "email": state.email,
-    //     "password": state.password
-    // }
+    const body = {
+        "username": username,
+        "password": password
+    }
 
     const config = {
         method: 'POST',
         headers: myHeaders,
-        // body: JSON.stringify(body)
+        body: JSON.stringify(body)
     };
     
-    fetch("https://motion.propulsion-home.ch/backend/api/auth/token/", config)
-    .then((response) => response.json())
-    .then((data) => { 
-        
-        dispatch(
-            {
-                type: 'LOGIN_USER',
-                payload: data
-            }
-        )
-    })
+    const response = await fetch('https://luna-aquarius.propulsion-learn.ch/api/token/', config);
+    const data = await response.json();
+    console.log(data)
+    const action = {
+        type: 'LOGIN_USER',
+        payload: data,
+    };
+    dispatch(action)
+
 };

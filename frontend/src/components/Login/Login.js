@@ -17,7 +17,7 @@ const Login = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.dispatch(loginAction())
+        props.dispatch(loginAction(state.username, state.password))
     }
 
 return(
