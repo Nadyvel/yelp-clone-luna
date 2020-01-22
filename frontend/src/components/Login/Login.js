@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import './Login.css';
 import InputAndLabel from "../InputAndLabel/InputAndLabel";
 import OrangeButton from "../OrangeButton/OrangeButton";
+import { withRouter } from "react-router-dom"
+import {loginAction} from '../../store/action/loginAction';
 
 
 const Login = props => {
@@ -14,6 +16,14 @@ const Login = props => {
     const handleChange = e =>
         setState({ ...state, [e.target.name]: e.target.value });
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.dispatch(loginAction(state.username, state.password))
+        if (props.tokens.access) {
+            props.history.push('/restaurants');
+        }
+    }
+
 return(
     <div className="loginForm">
         <div>
@@ -21,7 +31,7 @@ return(
         <span className="headLine"></span>
         </div>
 
-        <form className="loginWrapper">
+        <form onSubmit={handleSubmit} className="loginWrapper">
 
             <div className="loginRow1">
                 <InputAndLabel placeholder={"Username"} name="username" value={state.username} 
@@ -38,7 +48,12 @@ return(
         </form>
     </div>
 )
-
 }
 
-export default connect()(Login);
+const mapStateToProps = state => {
+    return {
+        tokens: state.loginReducer.tokens,
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Login))
