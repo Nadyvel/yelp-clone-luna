@@ -17,10 +17,37 @@ const Profile = props => {
 
     return(
         <div className="profilePage">
-            <img className="imgZurich" src={zurichBackground} alt="zurichBackground" />
+            <div className="profileImages">
+                <img className="imgZurich" src={zurichBackground} alt="zurichBackground" />
+                <div className="back_data">
+                    <div className="profile_back_info">
+                        <img className="profile_pic" src={props.meInfo.image} alt="profile_pic"/>
+                        <p>{props.meInfo.first_name}'s profile</p>
+                    </div>
+                    <div className="back_info">
+                        <p className="back_info_style">{props.meInfo.first_name} {props.meInfo.last_name}</p>
+                        <p className="back_info1_style">{props.meInfo.location}</p>
+                        <p className="back_info1_style">reviews</p>
+                        <p className="back_info1_style">comments</p>
+                    </div>
+                </div>
+            </div>
+            <div className="userInformation">
+                <div>
+                    
+                </div>
 
-            <div className="aboutUser">
-                <p>ABOUT {props.meInfo.first_name}</p>
+                <div className="aboutUser">
+                    <p className="descriptionTitle">ABOUT {props.meInfo.first_name}</p>
+                    <p className="descriptionTitle">Location</p>
+                    <p className="userInfo">{props.meInfo.location}</p>
+                    <p className="descriptionTitle">Luna member since</p>
+                    <p className="userInfo">{props.meInfo.date_joined}</p>
+                    <p className="descriptionTitle">Things I love</p>
+                    <p className="userInfo">{props.meInfo.things_love}</p>
+                    <p className="descriptionTitle">Description</p>
+                    <p className="userInfo">{props.meInfo.description}</p>
+                </div>
             </div>
         </div>
     )

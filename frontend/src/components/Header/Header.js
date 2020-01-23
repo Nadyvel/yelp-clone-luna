@@ -18,12 +18,16 @@ const Header = props => {
     props.history.push('/profile')
   }
 
+  const handleHome = () => {
+    props.history.push('/')
+  }
+
   return <div className="header-wrapper">
     <div className="header-left">
       <img src={luna} alt="logo" />
     </div>
     <div className="header-right">
-      <p className="header-font-size">Home</p>
+      <p style={{cursor: 'pointer'}} onClick={handleHome} className="header-font-size">Home</p>
       <p className="header-font-size">Search</p>
       <p style={{cursor: 'pointer'}} onClick={handleProfile} className="header-font-size">Profile</p>
       <div>
