@@ -6,11 +6,12 @@ import './ListReviews.css';
 import withRouter from "react-router-dom/es/withRouter";
 
 const ListReviews = (props) => {
-    console.log(props.id)
-    const restaurant_id = props.match.params.id || props.id.restaurant_id || 1 ;
+    console.log('props X', props)
+    const restaurant_id = props.match.params.id || 1 ;
     useEffect(() => {
         props.dispatch(fetchReviews(restaurant_id))
     }, []);
+    console.log('restaurant_id: ', restaurant_id)
     return (
         <div className="ListReviews-Container">
             {

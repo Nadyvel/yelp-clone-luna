@@ -1,14 +1,14 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import './SearchPage.css';
-import { fetchRestaurantDetails } from "../../store/action/restaurantAction";
-import { Route, Link } from "react-router-dom";
+import {fetchRestaurantDetails} from "../../store/action/restaurantAction";
+import {Route, Link} from "react-router-dom";
 import ListRestaurants from "../ListRestaurants/ListRestaurants";
 import ListUsers from "../ListUsers/ListUsers";
 import ListReviews from "../ListReviews/ListReviews";
 
 const SearchPage = (props) => {
-        useEffect(() => {
+    useEffect(() => {
         props.dispatch(fetchRestaurantDetails())
     }, []);
     return (
@@ -35,7 +35,7 @@ const SearchPage = (props) => {
                 </div>
             </div>
             <Route exact path="/search/restaurants" component={ListRestaurants}/>
-            <Route path="/search/reviews/:id" component={ListReviews}/>
+            <Route path="/search/reviews/" component={ListReviews}/>
             <Route exact path="/search/users" component={ListUsers}/>
         </div>
     )
