@@ -1,6 +1,6 @@
 
 .RestaurantCard {
-    border: 1px solid red;
+    border: 1px solid grey;
     margin: 10px;
     width: 271px;
     flex-basis: 271px;

@@ -11,6 +11,8 @@ import NewRestaurantForm from "./components/NewRestaurantForm/newRestaurantForm"
 import SearchPage from "./components/SearchPage/Searchpage";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
+import RestaurantDetailView from "./components/RestaurantDetailView/RestaurantDetailView";
+import ListReviews from "./components/ListReviews/ListReviews";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -20,8 +22,10 @@ ReactDOM.render(
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/restaurants/new/" component={NewRestaurantForm}/>
-                    <Route exact path="/search" component={SearchPage}/>
+                    <Route exact path="/restaurants/:id" component={RestaurantDetailView}/>
+                    <Route path="/search" component={SearchPage}/>
                     <Route exact path="/registration" component={Registration}/>
+                    <Route exact path="/reviews/restaurant/:id" component={ListReviews}/>
                 </App>
             </Switch>
         </Router>
