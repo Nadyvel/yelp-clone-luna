@@ -29,7 +29,6 @@ class RegistrationSerializer(serializers.Serializer):
         )
         message.send()
 
-
     def save(self, validated_data):
         email = validated_data.get('email')
         new_user = User.objects.create_user(
@@ -80,7 +79,6 @@ class RegistrationValidationSerializer(RegistrationSerializer):
         except User.DoesNotExist:
             return username
 
-
     def validate(self, data):
         user = data.get('email')
         if data.get('password') != data.get('password_repeat'):
@@ -93,7 +91,6 @@ class RegistrationValidationSerializer(RegistrationSerializer):
                 'code': 'Wrong code or already validated.'
             })
         return data
-
 
     def save(self, validated_data):
         user = validated_data.get('email')
