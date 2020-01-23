@@ -39,7 +39,7 @@ class RegistrationSerializer(serializers.Serializer):
         )
         self.send_registration_email(
             email=email,
-            code=new_user.profile.registration_code,
+            code=new_user.registration_code,
         )
         return new_user
 
@@ -88,7 +88,7 @@ class RegistrationValidationSerializer(RegistrationSerializer):
                 'password_repeat': 'Passwords do not match.'
             })
 
-        if data.get('code') != user.profile.registration_code or user.is_active:
+        if data.get('code') != user.registration_code or user.is_active:
             raise serializers.ValidationError({
                 'code': 'Wrong code or already validated.'
             })

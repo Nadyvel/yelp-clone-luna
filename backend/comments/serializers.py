@@ -5,7 +5,7 @@ from users.serializers import UserSerializer
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    user = UserSerializer(required=False)
+    user = UserSerializer(read_only=True)
 
     class Meta:
         model = Comment

@@ -1,7 +1,6 @@
 from django.urls import path
 
-from project.api.registration.views import Registration, RegistrationValidation
-
+from registration.views import Registration, RegistrationValidation
 
 urlpatterns = [
     path('', Registration.as_view()),
