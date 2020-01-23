@@ -18,9 +18,10 @@ li {
 }
 
 .imgFooter {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     margin: 5px;
     size: 5px;
     padding-right: 15px;
+    padding-top: 6%;
 }
