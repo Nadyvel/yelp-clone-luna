@@ -6,9 +6,11 @@ import {connect} from "react-redux";
 import  { fetchRestaurantDetails } from '../../store/action/restaurantAction';
 
 const LandingPage = (props) => {
+
     useEffect(() => {
         props.dispatch(fetchRestaurantDetails())
     }, []);
+
     return (
         <div>
             <div>
