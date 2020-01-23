@@ -3,3 +3,9 @@
     height: 410px;
     width: 271px;
 }
+
+.Button-Container {
+    border: 1px solid red;
+    justify-content: center;
+    display: flex;
+}

@@ -1,0 +1,32 @@
+.ReviewCardRestaurant {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 188px;
+    margin: 10px;
+}
+.UpperRight-Upper-Container {
+}
+
+.UpperUserCard-Container-Restaurant {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LowerReviewCard-Restaurant {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.Button-Container {
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}

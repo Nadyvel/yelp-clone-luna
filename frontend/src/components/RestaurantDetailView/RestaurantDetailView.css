@@ -1,0 +1,14 @@
+.restaurant-banner img {
+    height: 496px;
+    width: 1440px;
+}
+
+.restaurant-bottom-container {
+    display: flex;
+    justify-content: center;
+}
+
+.review-list {
+    display: flex;
+    border: 1px solid red;
+}
