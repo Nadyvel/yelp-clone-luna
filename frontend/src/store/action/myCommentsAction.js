@@ -1,4 +1,4 @@
-export const meAction = () => async (dispatch, getState) => {
+export const myCommentsAction = () => async (dispatch, getState) => {
 
     const token = getState().loginReducer.tokens.access
     const myHeaders = new Headers({
@@ -11,15 +11,14 @@ export const meAction = () => async (dispatch, getState) => {
         headers: myHeaders,
     };
     
-    const response = await fetch("https://luna-aquarius.propulsion-learn.ch/api/me/", config);
+    const response = await fetch(`https://luna-aquarius.propulsion-learn.ch/api/review/comment/${id}`, config);
     const data = await response.json();
-    console.log("My data", data);  
+    console.log("My comments", data);  
     const action = {
-        type: 'MY_INFO',
+        type: 'MY_COMMENTS',
         payload: data,
     };
     dispatch(action)    
 };
 
-
-///api/reviews/user/<int:user_id>/    reviews of a single user
+///api/review/comment/<int:user_id>/  comments of a single user

@@ -4,15 +4,15 @@ import './Profile.css';
 import { withRouter } from "react-router-dom";
 import zurichBackground from "./Images/zurichBackground.jpg"
 import {meAction} from "../../store/action/meAction"
+import {myCommentsAction} from "../../store/action/myCommentsAction"
 
 
 const Profile = props => {
 
     useEffect(() => {
         props.dispatch(meAction())
+        props.dispatch(myCommentsAction())
     }, []);
-
-    
 
 
     return(
@@ -59,9 +59,12 @@ const mapStateToProps = state => {
     return {
         tokens: state.loginReducer.tokens,
         meInfo: state.meReducer.meInfo,
+        myComments: state.myCommentsReducer.myComments,
     }
 }
 
 export default withRouter(connect(mapStateToProps)(Profile))
 
 ///api/me/
+///api/review/comment/<int:user_id>/  comments of a single user
+///api/reviews/user/<int:user_id>/    reviews of a single user

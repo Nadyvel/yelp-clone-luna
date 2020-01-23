@@ -4,13 +4,15 @@ import {restaurantReducer} from "./restaurantReducer";
 import loginReducer from './loginReducer';
 import { reviewReducer } from "./reviewReducer";
 import { meReducer } from "./meReducer";
+import { myCommentsReducer } from "./myCommentsReducer";
 
 const rootReducer = combineReducers({
   userReducer,
   restaurantReducer,
   loginReducer,
   reviewReducer,
-  meReducer
+  meReducer,
+  myCommentsReducer
 });
 
 export default rootReducer
