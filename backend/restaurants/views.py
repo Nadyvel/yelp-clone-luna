@@ -2,14 +2,14 @@ import django_filters
 from django.contrib.auth import get_user_model
 
 from django.db.models import Q
-from django.shortcuts import render
+
 
 
 # Create your views here.
-# creates post
-from django_filters.rest_framework import filters
+
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, \
+    GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -92,3 +92,14 @@ class GetRestaurantsByCategory(ListAPIView):
         search_string = self.request.query_params.get('category')
         query_result = Restaurant.objects.filter(category__icontains=search_string).order_by('timestamp').reverse()
         return query_result
+
+
+class ListFourBestRestaurants(GenericAPIView):
+
+    serializer_class = RestaurantSerializer
+
+    def get(self, request, **kwargs):
+        queryset = Restaurant.objects.all()
+        response = sorted(queryset, key=lambda restaurant: restaurant.average_rating, reverse=True)[:4]
+        serializer = self.get_serializer(response, many=True)
+        return Response(serializer.data)

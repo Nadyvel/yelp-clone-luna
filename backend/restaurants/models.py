@@ -74,26 +74,6 @@ class Restaurant(models.Model):
         choices=PRICE_LEVEL_CHOICES,
     )
 
-    # category = models.CharField(
-    #     verbose_name='restaurant_category',
-    #     on_delete=models.SET_NULL,
-    #     related_name='restaurants',
-    #     null=True,
-    #     blank=True,
-    #
-    # )
-
-    # ASIAN = 'ASIAN'
-    # ITALIAN = 'ITALIAN'
-    # MEXICAN = 'MEXICAN'
-    # SWISS = 'SWISS'
-    # CATEGORY_CHOICES = (
-    #     (ASIAN, ASIAN),
-    #     (ITALIAN, ITALIAN),
-    #     (MEXICAN, MEXICAN),
-    #     (SWISS, SWISS)
-    # )
-
     category = models.CharField(
         verbose_name='category',
         max_length=150,
@@ -106,10 +86,13 @@ class Restaurant(models.Model):
         default='Asian'
     )
 
-    # created = models.DateTimeField(
-    #     verbose_name='date_created',
-    #     auto_now_add=True,
-    # )
+    @property
+    def average_rating(self):
+        reviews = self.reviews.all()
+        if reviews:
+            avg = sum(review.rating for review in reviews) / len(reviews)
+            return avg
+        return 0
 
     modified = models.DateTimeField(
         verbose_name='date_modified',
