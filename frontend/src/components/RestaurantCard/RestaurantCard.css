@@ -1,7 +1,8 @@
 
 .RestaurantCard {
-    border: 1px solid grey;
-    border-top: orange 7px solid;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+    border-top:#e47d31 7px solid;
     border-radius: 3px;
     margin: 10px;
     width: 271px;
@@ -18,5 +19,5 @@
     display: inline-block;
     margin: 0 auto;
     padding-bottom: 10px;
-    box-shadow: 0 19px 0 -15px black;
+    box-shadow: 0 19px 0 -15px #e47d31;
 }
