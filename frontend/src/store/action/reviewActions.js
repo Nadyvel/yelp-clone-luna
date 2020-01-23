@@ -12,5 +12,6 @@ export const fetchReviews = (restaurant_id) => async (dispatch, getState) => {
         type: 'reviews',
         payload: data
     };
+    console.log('data: ', data)
     dispatch(action)
 };
