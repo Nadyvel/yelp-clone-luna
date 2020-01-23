@@ -10,8 +10,8 @@ const RegistrationMessage = props => {
 return(
     <div className="registrationMessageForm">
         <div>
-        <h5 className="registrationMessageTitle">REGISTRATION</h5>
-        <span className="headLine"></span>
+        <h5 className="registrationMessageTitle"><span className="headLine">REGISTRATION</span></h5>
+        
         </div>
 
             <div className="registrationMessage">

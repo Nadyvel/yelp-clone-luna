@@ -24,9 +24,8 @@ input {
 .headLine {
   display: flex;
   justify-content: center;
-  border-bottom: 4px solid #e47d31;
-  width: 160px;
-  
+  border-bottom: 3px solid #e47d31;
+  width: 100px;
 }
 
 .mainTitle {

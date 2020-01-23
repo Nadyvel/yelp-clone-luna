@@ -1,0 +1,14 @@
+.GreyLikeButton {
+    display: flex;
+    justify-content: center;
+    width: 125px;
+    height: 33px;
+    background-color: rgba(145, 145, 145, 0.6);
+    border-radius: 28px 0 0 28px;
+    margin-right: 3px;
+}
+
+.GreyLikeButton img {
+    width: 17px;
+    height: 21px;
+}

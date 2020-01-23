@@ -57,7 +57,7 @@
     display: flex;
     width: 232px;
     height: 234px;
-    position: absolute;
+    /* position: absolute; */
     z-index: 2;
 }
 
@@ -79,7 +79,7 @@
 
 .aboutUser {
     width: 30%;
-    margin-top: 80px;
+    margin-top: 150px;
 }
 
 .userInfo {
@@ -93,6 +93,23 @@
 .profile_back_info {
     display: flex;
     width: 400px;
-    margin-top: 25px;
-    margin-left: 10vw;
+    /* margin-top: 25px;
+    margin-left: 10vw; */
+    height: 400px;
+    flex-direction: column;
+    position: absolute;
+    top: 67px;
+    left: 40px;
 }
+
+.left_user_data {
+    
+    width: 141px;
+    height: 22px;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #4c4c4c;
+}
+

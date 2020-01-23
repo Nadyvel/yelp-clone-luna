@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 import './ReviewCard.css';
+import GreyLikeButton from "../GreyLikeButton/GreyLikeButton";
+import GreyCommentButton from "../GreyCommentButton/GreyCommentButton";
 
 const ReviewCard = props => {
     return (
@@ -11,26 +13,26 @@ const ReviewCard = props => {
                 </div>
                 <div className="UpperRight-Upper-Container">
                     <div className="UpperRight-Upper-UserCard">
-                        UserName
+                        {props.review.user.username}
                     </div>
                     <div className="UpperRight-Lower-UserCard">
-                        Review Count
+                        {props.length}
                     </div>
                 </div>
             </div>
             <div className="LowerReviewCard">
                 <div className="RestaurantName">
-                    RestaurantName
+                    {props.review.restaurant}
                 </div>
                 <div className="Review">
-                    Review
+                    {props.review.rating}
                 </div>
                 <div className="Button-Container">
                     <div className="Button-Left">
-                        Button-Left
+                        <GreyLikeButton reviewLikes={props.review.likes}/>
                     </div>
                     <div className="Button-Right">
-                        Button-Right
+                        <GreyCommentButton commentCount={props.review.comments}/>
                     </div>
                 </div>
                 <div className="Review-Comments">

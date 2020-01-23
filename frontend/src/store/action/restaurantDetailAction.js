@@ -1,6 +1,6 @@
-//------------------ fetch restaurants
+//------------------ fetch restaurant Details
 
-export const fetchRestaurantDetails = () => async (dispatch, getState) => {
+export const fetchSingleRestaurantDetails = (restaurant_id) => async (dispatch, getState) => {
     const token = getState().loginReducer.tokens.access;
     const headers = new Headers({
         "content-type": "application/json",
@@ -10,10 +10,10 @@ export const fetchRestaurantDetails = () => async (dispatch, getState) => {
         method: "GET",
         headers
     };
-    const response = await fetch('https://luna-aquarius.propulsion-learn.ch/api/restaurants/', config);
+    const response = await fetch(`https://luna-aquarius.propulsion-learn.ch/api/restaurants/${restaurant_id}`, config);
     const data = await response.json();
     const action = {
-        type: 'restaurantDetails',
+        type: 'singleRestaurant',
         payload: data
     };
     dispatch(action)

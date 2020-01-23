@@ -57,14 +57,16 @@
     box-shadow: 0 19px 0 -15px #e47d31;
 }
 
-.Link {
-    padding: 1rem;
-     color: red;
-}
-
 .RestaurantSearch {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin: 10px;
+}
+
+.LinkText {
+    font-family: Arial;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
 }

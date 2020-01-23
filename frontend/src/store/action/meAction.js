@@ -12,8 +12,7 @@ export const meAction = () => async (dispatch, getState) => {
     };
     
     const response = await fetch("https://luna-aquarius.propulsion-learn.ch/api/me/", config);
-    const data = await response.json();
-    console.log("My data", data);  
+    const data = await response.json(); 
     const action = {
         type: 'MY_INFO',
         payload: data,

@@ -20,7 +20,6 @@ const LandingPage = (props) => {
                     <div className="RestaurantCard-section">
                         {props.restaurants.length > 0 &&
                         props.restaurants.map((restaurant, index) => {
-                            console.log('in da map', restaurant)
                             return <RestaurantCard key={index} restaurant={restaurant}/>
                         })
                         }
