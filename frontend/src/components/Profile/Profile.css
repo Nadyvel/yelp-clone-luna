@@ -1,0 +1,98 @@
+.imgZurich {
+    height: 152px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5); 
+    position: absolute;
+    z-index: 0; 
+}
+
+.profilePage {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    width: 100vw;
+    height: 802px;  
+}
+
+.profileImages {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.back_info {
+    position: absolute;
+    z-index: 1;
+    margin-left: 30vw;
+}
+
+.back_info_style {
+    width: 159px;
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.back_info1_style {
+    width: 150px;
+    font-family: Helvetica;
+    font-size: 18px;
+    text-align: justify;
+    color: #ffffff;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+.back_data {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_pic {
+    display: flex;
+    width: 232px;
+    height: 234px;
+    position: absolute;
+    z-index: 2;
+}
+
+.descriptionTitle {
+    width: 240px;
+    height: 24px;
+    font-family: Helvetica;
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+.userInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.aboutUser {
+    width: 30%;
+    margin-top: 80px;
+}
+
+.userInfo {
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    color: #000000;
+    margin: 0;
+}
+
+.profile_back_info {
+    display: flex;
+    width: 400px;
+    margin-top: 25px;
+    margin-left: 10vw;
+}
