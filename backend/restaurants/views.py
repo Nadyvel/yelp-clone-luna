@@ -95,7 +95,7 @@ class GetRestaurantsByCategory(ListAPIView):
 
 
 class ListFourBestRestaurants(GenericAPIView):
-
+    permission_classes = []
     serializer_class = RestaurantSerializer
 
     def get(self, request, **kwargs):
