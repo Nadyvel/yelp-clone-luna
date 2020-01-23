@@ -4,6 +4,8 @@ from rest_framework.response import Response
 
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantSerializer
+from reviews.models import Review
+from reviews.serializers import ReviewSerializer
 from users.models import User
 from users.serializers import UserSerializer
 
@@ -31,5 +33,15 @@ class SearchView(ListAPIView):
                 Q(last_name__icontains=search_string)
             )
             serializer = UserSerializer(response, many=True)
+            return Response(serializer.data)
+
+        elif type_string == 'review':
+            self.serializer_class = ReviewSerializer
+            response = Review.objects.filter(
+                Q(restaurant__icontains=search_string) |
+                Q(user__icontains=search_string) |
+                Q(content__icontains=search_string)
+            )
+            serializer = ReviewSerializer(response, many=True)
             return Response(serializer.data)
         return Response("Search type doesn't exist")

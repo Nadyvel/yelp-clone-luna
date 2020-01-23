@@ -4,7 +4,6 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-
 # Create your models here.
 def code_generator(length=6):
     numbers = '0123456789'

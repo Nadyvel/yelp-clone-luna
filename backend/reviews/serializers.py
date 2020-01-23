@@ -16,11 +16,3 @@ class ReviewSerializer(serializers.ModelSerializer):
     def get_total_likes(self, review):
         return review.likes.count()   # gives all the relations and the amount of likes for the post
 
-
-# class CommentsSerializer(serializers.ModelSerializer):
-#     owner = UserSerializer(required=False)
-#
-#     class Meta:
-#         model = Comments
-#         fields = '__all__'
-#         read_only_fields = ['owner']

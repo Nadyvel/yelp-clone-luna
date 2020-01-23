@@ -57,7 +57,7 @@ class DeleteUpdateReview(RetrieveUpdateDestroyAPIView):
 # get all reviews from one user
 class GetReviewsOfUser(ListAPIView):
     serializer_class = ReviewSerializer
-    lookup_url_kwarg = 'owner_id'
+    lookup_url_kwarg = 'user_id'
 
     def get_queryset(self):
         user_id = self.kwargs['user_id']
@@ -100,22 +100,3 @@ class CommentedByUserReviews(GenericAPIView):
         reviews = Review.objects.filter(comments__user=request.user)
         return Response(ReviewSerializer(reviews, many=True).data)
 
-
-# class ListCreateComments(ListCreateAPIView):
-#     serializer_class = CommentsSerializer
-#     permission_classes = [IsAuthenticated]
-#     lookup_url_kwarg = 'post_id'
-#
-#     # Creates new comment on a post
-#     def perform_create(self, serializer):
-#         post = self.kwargs['post_id']
-#         comment = Comments(owner=self.request.user, post_id=post, **serializer.validated_data)
-#         comment.save()
-#
-#         # Override get_queryset method to list all comments of review in reverse chronological order
-#     def get_queryset(self):
-#         review_id = self.kwargs['review_id']
-#         review = Review.objects.get(id=review_id)
-#         comments = review.comments.all().order_by('timestamp').reverse()  # this returns instances
-#         return comments
-#
