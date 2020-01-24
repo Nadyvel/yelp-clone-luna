@@ -20,8 +20,8 @@ import VerificationForm from "./components/VerificationForm/VerificationForm";
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <Switch>
-                <App>
+            <App>
+                <Switch>
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/restaurants/new/" component={NewRestaurantForm}/>
@@ -32,8 +32,8 @@ ReactDOM.render(
                     <Route exact path="/profile" component={Profile}/>
                     <Route exact path="/reviews/restaurant/:id" component={ListReviews}/>
                     <Route exact path="/validate" component={VerificationForm}/>
-                </App>
-            </Switch>
+                </Switch>
+            </App>
         </Router>
     </Provider>,
     document.getElementById("root")

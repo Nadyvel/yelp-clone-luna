@@ -3,14 +3,14 @@ import {connect} from "react-redux";
 import './ReviewCard.css';
 import GreyLikeButton from "../GreyLikeButton/GreyLikeButton";
 import GreyCommentButton from "../GreyCommentButton/GreyCommentButton";
+import girl from '../../assets/images/girl.jpg';
 
 const ReviewCard = props => {
-    console.log('userprops', props)
     return (
         <div className="ReviewCard">
             <div className="UpperUserCard-Container">
                 <div className="UpperLeft-UserCard">
-                    <img src={props.users} alt="user-image"/>
+                    <img src={girl} alt="user-image"/>
                 </div>
                 <div className="UpperRight-Upper-Container">
                     <div className="UpperRight-Upper-UserCard">
