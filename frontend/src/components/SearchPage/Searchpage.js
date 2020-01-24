@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import './SearchPage.css';
 import {fetchRestaurantDetails} from "../../store/action/restaurantAction";
-import {Route, Link} from "react-router-dom";
+import {Route, Link, Redirect} from "react-router-dom";
 import ListRestaurants from "../ListRestaurants/ListRestaurants";
 import ListUsers from "../ListUsers/ListUsers";
 import ListReviews from "../ListReviews/ListReviews";
@@ -29,14 +29,15 @@ const SearchPage = (props) => {
             </div>
             <div className="SearchCategoryBody">
                 <div className="SearchCategoryContainer">
-                    <Link to="/search/restaurants" className="LinkText">Restaurants</Link>
-                    <Link to="/search/reviews" className="LinkText">Reviews</Link>
-                    <Link to="/search/users" className="LinkText">Users</Link>
+                    <Link to="/search/restaurants" className="LinkText">RESTAURANTS</Link>
+                    <Link to="/search/reviews" className="LinkText">REWIEWS</Link>
+                    <Link to="/search/users" className="LinkText">USERS</Link>
                 </div>
             </div>
             <Route exact path="/search/restaurants" component={ListRestaurants}/>
             <Route path="/search/reviews/" component={ListReviews}/>
             <Route exact path="/search/users" component={ListUsers}/>
+            <Redirect from="/search" to="/search/restaurants"/>
         </div>
     )
 }

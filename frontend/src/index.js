@@ -14,22 +14,26 @@ import Registration from "./components/Registration/Registration";
 import RestaurantDetailView from "./components/RestaurantDetailView/RestaurantDetailView";
 import ListReviews from "./components/ListReviews/ListReviews";
 import Profile from "./components/Profile/Profile";
+import RegistrationMessage from "./components/RegistrationMessage/RegistrationMessage";
+import VerificationForm from "./components/VerificationForm/VerificationForm";
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <Switch>
-                <App>
+            <App>
+                <Switch>
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/restaurants/new/" component={NewRestaurantForm}/>
                     <Route exact path="/restaurants/:id" component={RestaurantDetailView}/>
-                    <Route path="/search" component={SearchPage}/>
+                    <Route path="/search/" component={SearchPage}/>
                     <Route exact path="/registration" component={Registration}/>
+                    <Route exact path="/congrats" component={RegistrationMessage}/>
                     <Route exact path="/profile" component={Profile}/>
                     <Route exact path="/reviews/restaurant/:id" component={ListReviews}/>
-                </App>
-            </Switch>
+                    <Route exact path="/validate" component={VerificationForm}/>
+                </Switch>
+            </App>
         </Router>
     </Provider>,
     document.getElementById("root")
