@@ -3,12 +3,12 @@ import "./LandingPage.css";
 import RestaurantBanner from "../RestaurantBanner/RestaurantBanner";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import {connect} from "react-redux";
-import  { fetchRestaurantDetails } from '../../store/action/restaurantAction';
+import {fetch4RestaurantDetails} from '../../store/action/restaurantAction';
 
 const LandingPage = (props) => {
 
     useEffect(() => {
-        props.dispatch(fetchRestaurantDetails())
+        props.dispatch(fetch4RestaurantDetails())
     }, []);
 
     return (

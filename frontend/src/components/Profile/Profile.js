@@ -6,7 +6,6 @@ import zurichBackground from "./Images/zurichBackground.jpg"
 import {meAction} from "../../store/action/meAction"
 import {myCommentsAction} from "../../store/action/myCommentsAction"
 
-
 const Profile = props => {
     
     useEffect(() => {
@@ -14,18 +13,36 @@ const Profile = props => {
         props.dispatch(myCommentsAction())
     }, []);
 
+
+
     return(
         <div className="profilePage">
             <div className="profileImages">
                 <img className="imgZurich" src={zurichBackground} alt="zurichBackground" />
                 <div className="back_data">
                     <div className="profile_back_info">
-                        <img className="profile_pic" src={props.meInfo.image} alt="profile_pic"/>
-                        <p className="left_user_data">{props.meInfo.first_name}'s profile</p>
-                        <p>Comments</p>
-                        {props.myComments.myComments_content}
+                        <div className="UserProfileCard">
+                            <img className="profile_pic" src={props.meInfo.image} alt="profile_pic"/>
+                            <p className="left_user_data">{props.meInfo.first_name}'s profile</p>
+                                <p style={{cursor: 'pointer'}}  className="optionUser">Reviews</p>
+                                <p style={{cursor: 'pointer'}}  className="optionUser">Comments</p>  
+                                <p style={{cursor: 'pointer'}}  className="optionUser">Restaurants</p> 
+                                <p style={{cursor: 'pointer'}}  className="optionUser">Edit profile</p> 
+                        </div>
+                        <div className="middleInfoCard">
+                        <p>REVIEWS</p>
+                        {props.myComments && props.myComments.map((comments, i)=> {
+                            return  <p key={i}>{comments.restaurant_review}
+                            {comments.created}
+                            {comments.comments_content}</p>
+                        }
+                        )}   
+                        </div>
 
                     </div>
+
+                    
+
                     <div className="back_info">
                         <p className="back_info_style">{props.meInfo.first_name} {props.meInfo.last_name}</p>
                         <p className="back_info1_style">{props.meInfo.location}</p>
