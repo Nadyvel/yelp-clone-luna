@@ -65,10 +65,13 @@
 }
 
 .LinkText {
+    color: #4c4c4c;
     font-family: Arial;
     font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
     padding: 10px;
+    margin-right: 50px;
 }
 
 .restaurant-info-container {
