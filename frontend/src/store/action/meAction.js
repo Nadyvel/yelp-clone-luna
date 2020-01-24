@@ -1,4 +1,5 @@
-export const meAction = () => (dispatch, getState) => {
+export const meAction = () => async (dispatch, getState) => {
+
     const token = getState().loginReducer.tokens.access
     const myHeaders = new Headers({
         "content-type": "application/json",
@@ -10,17 +11,14 @@ export const meAction = () => (dispatch, getState) => {
         headers: myHeaders,
     };
     
-    fetch("https://luna-aquarius.propulsion-learn.ch/api/me/", config)
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("My data", data);  
-        
-        //this.props.dispatch(myPostsAction(data))
-        dispatch(
-            {
-                type: 'MY_INFO',
-                payload: data
-            }
-        )
-    })
+    const response = await fetch("https://luna-aquarius.propulsion-learn.ch/api/me/", config);
+    const data = await response.json(); 
+    const action = {
+        type: 'MY_INFO',
+        payload: data,
+    };
+    dispatch(action)    
 };
+
+
+///api/reviews/user/<int:user_id>/    reviews of a single user

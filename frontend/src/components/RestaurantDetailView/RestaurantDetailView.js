@@ -6,6 +6,14 @@ import './RestaurantDetailView.css';
 import OrangeButton from "../OrangeButton/OrangeButton";
 import {fetchReviews} from "../../store/action/reviewActions";
 import ReviewCardRestaurant from "./ReviewCardRestaurant/ReviewCardRestaurant";
+import clock from "../../assets/svg/clock.svg";
+import money from "../../assets/svg/money.svg";
+import map from "../../assets/images/map.png";
+import pin from "../../assets/svg/pin.svg";
+import phone from "../../assets/svg/phone.svg";
+import web from "../../assets/svg/web.svg";
+import star from "../../assets/svg/star.svg";
+
 
 const RestaurantDetailView = (props) => {
     const restaurant_id = props.match.params.id
@@ -16,7 +24,47 @@ const RestaurantDetailView = (props) => {
     return (
         <div>
             <div className="restaurant-banner">
-                <img src={restaurantBanner1} alt="restaurant-banner"/>
+                <div className="small-banner">
+                    <div className="restaurant-info-container">
+                        <div className="restaurant-name">
+                            <h1>{props.singleRestaurant.name}</h1>
+                        </div>
+                        <div className="restaurant-category">
+                            <h2>{props.singleRestaurant.category}</h2>
+                        </div>
+                        <div className="stars-rating-container">
+                            <div className="rating-stars">
+                                <img id="active" src={star}/>
+                                <img id="active" src={star}/>
+                                <img id="active" src={star}/>
+                                <img src={star}/>
+                            </div>
+                            <div className="restaurant-reviews">
+                                <h4>{props.singleRestaurant['total_ratings']} reviews</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="banner_and_box">
+                    <img src={restaurantBanner1} alt="restaurant-banner"/>
+                </div>
+                <div className="map-box">
+                    <img src={map}/>
+                    <div className="rows">
+                        <div className="first-row">
+                            <img src={pin} alt="pin"/>
+                            <p className="street">{props.singleRestaurant.street}</p>
+                        </div>
+                        <div className="second-row">
+                            <img src={phone} alt="phone"/>
+                            <p className="street">{props.singleRestaurant.phone_number}</p>
+                        </div>
+                        <div className="third-row">
+                            <img src={web} alt="web"/>
+                            <p className="street">{props.singleRestaurant.restaurant_email}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="restaurant-bottom-container">
                 <div className="restaurant-bottom-left-container">
@@ -35,10 +83,12 @@ const RestaurantDetailView = (props) => {
                 </div>
                 <div className="restaurant-bottom-right-container">
                     <div className="business-hours">
-                        <h1>business-hours</h1>
+                        <img src={clock}/>
+                        <h1>{props.singleRestaurant.opening_hours ? props.singleRestaurant.opening_hours : "Keine Öffnungszeiten vorhanden"}</h1>
                     </div>
                     <div className="price-level">
-                        <h1>price-level</h1>
+                        <img src={money}/>
+                        <h1>Price level: {props.singleRestaurant.price_level}</h1>
                     </div>
                     <div className="actions">
                         <OrangeButton content={"WRITE A REVIEW"}/>
@@ -51,7 +101,6 @@ const RestaurantDetailView = (props) => {
 }
 
 const mapStateToProps = state => {
-    console.log('mapStateToProps:', state)
     return {
         singleRestaurant: state.restaurantDetailReducer.singleRestaurant,
         reviews: state.reviewReducer.reviews

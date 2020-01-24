@@ -13,7 +13,7 @@ li {
     display: inline-block;
     padding-right: 45px;
     margin: 0;
-    font-size: 14px;
+    font-size: 20px;
     color: gray;
 }
 
@@ -21,7 +21,6 @@ li {
     height: 35px;
     width: 35px;
     margin: 5px;
-    size: 5px;
     padding-right: 15px;
     padding-top: 6%;
 }

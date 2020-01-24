@@ -1,6 +1,6 @@
 const initialState = {
-    singleRestaurant: []
-}
+    singleRestaurant: {}
+};
 
 export const restaurantDetailReducer = (state = initialState, action) => {
     if (action.type === "singleRestaurant") {

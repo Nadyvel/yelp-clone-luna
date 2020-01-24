@@ -27,8 +27,8 @@ const Login = props => {
 return(
     <div className="loginForm">
         <div>
-        <h5 className="loginTitle">LOGIN</h5>
-        <span className="headLine"></span>
+            <h5 className="loginTitle"><span className="headLine">LOGIN</span></h5>
+            
         </div>
 
         <form onSubmit={handleSubmit} className="loginWrapper">
