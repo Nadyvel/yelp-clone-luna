@@ -17,7 +17,7 @@ const ListReviews = (props) => {
             {
                 props.reviews.length > 0 &&
                 props.reviews.map((review, index) => {
-                    return <ReviewCard key={index} review={review} length={props.reviews.length} users={props.users[0].image}/>
+                    return <ReviewCard key={index} review={review} length={props.reviews.length} />
                 })
             }
         </div>
