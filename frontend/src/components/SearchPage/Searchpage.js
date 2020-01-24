@@ -29,9 +29,9 @@ const SearchPage = (props) => {
             </div>
             <div className="SearchCategoryBody">
                 <div className="SearchCategoryContainer">
-                    <Link to="/search/restaurants" className="LinkText">Restaurants</Link>
-                    <Link to="/search/reviews" className="LinkText">Reviews</Link>
-                    <Link to="/search/users" className="LinkText">Users</Link>
+                    <Link to="/search/restaurants" className="LinkText">RESTAURANTS</Link>
+                    <Link to="/search/reviews" className="LinkText">REWIEWS</Link>
+                    <Link to="/search/users" className="LinkText">USERS</Link>
                 </div>
             </div>
             <Route exact path="/search/restaurants" component={ListRestaurants}/>
