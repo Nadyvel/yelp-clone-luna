@@ -24,7 +24,7 @@ class RegistrationSerializer(serializers.Serializer):
         message = EmailMessage(
             subject='Welcome to Luna',
             body=f'Follow this link to finish your registration'
-                 f'https://luna-aquarius.propulsion-learn.ch/api/registration/verification/{email}/{code}/',
+                 f'https://luna-aquarius.propulsion-learn.ch/api/registration/validate/{email}/{code}/',
             to=[email],
         )
         message.send()
