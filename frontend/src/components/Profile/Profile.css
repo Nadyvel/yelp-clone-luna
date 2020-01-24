@@ -123,8 +123,16 @@
 
 .middleInfoCard {
     display: flex;
+    flex-direction: column;
     margin-top: 80px;
     margin-left: 10px;
-
 }
 
+.commentsTagTitle {
+    width: 274.5px;
+    height: 24px;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: bold;
+    color: #303030;
+}
