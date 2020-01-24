@@ -22,13 +22,17 @@ const Header = props => {
     props.history.push('/')
   }
 
+  const handleSearch = () => {
+    props.history.push('/search/restaurants')
+  }
+
   return <div className="header-wrapper">
     <div className="header-left">
       <img src={luna} alt="logo" />
     </div>
     <div className="header-right">
       <p style={{cursor: 'pointer'}} onClick={handleHome} className="header-font-size">Home</p>
-      <p className="header-font-size">Search</p>
+      <p style={{cursor: 'pointer'}} onClick={handleSearch} className="header-font-size">Search</p>
       <p style={{cursor: 'pointer'}} onClick={handleProfile} className="header-font-size">Profile</p>
       <div>
         <button onClick={handleSignUp} className="header-button-left">SIGNUP</button>
@@ -37,6 +41,5 @@ const Header = props => {
     </div>
   </div>
 };
-
 
 export default withRouter(connect()(Header));

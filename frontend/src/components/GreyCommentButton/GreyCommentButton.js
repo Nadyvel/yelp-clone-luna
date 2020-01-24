@@ -1,6 +1,5 @@
 import React from "react";
 import {connect} from "react-redux";
-import like from "../../assets/svg/thumbsup.png";
 import './GreyCommentButton.css';
 
 const GreyCommentButton = (props) => {

@@ -5,11 +5,12 @@ import GreyLikeButton from "../GreyLikeButton/GreyLikeButton";
 import GreyCommentButton from "../GreyCommentButton/GreyCommentButton";
 
 const ReviewCard = props => {
+    console.log('userprops', props)
     return (
         <div className="ReviewCard">
             <div className="UpperUserCard-Container">
                 <div className="UpperLeft-UserCard">
-                    Image
+                    <img src={props.users} alt="user-image"/>
                 </div>
                 <div className="UpperRight-Upper-Container">
                     <div className="UpperRight-Upper-UserCard">
@@ -29,7 +30,7 @@ const ReviewCard = props => {
                 </div>
                 <div className="Button-Container">
                     <div className="Button-Left">
-                        <GreyLikeButton reviewLikes={props.review.likes}/>
+                        <GreyLikeButton reviewLikes={props.review.total_likes}/>
                     </div>
                     <div className="Button-Right">
                         <GreyCommentButton commentCount={props.review.comments}/>
