@@ -34,10 +34,10 @@ const RestaurantDetailView = (props) => {
                         </div>
                         <div className="stars-rating-container">
                             <div className="rating-stars">
-                                <img id="active" src={star}/>
-                                <img id="active" src={star}/>
-                                <img id="active" src={star}/>
-                                <img src={star}/>
+                                <img id="active" src={star} alt="star"/>
+                                <img id="active" src={star} alt="star"/>
+                                <img id="active" src={star} alt="star"/>
+                                <img src={star} alt="star"/>
                             </div>
                             <div className="restaurant-reviews">
                                 <h4>{props.singleRestaurant['total_ratings']} reviews</h4>
@@ -49,7 +49,7 @@ const RestaurantDetailView = (props) => {
                     <img src={restaurantBanner1} alt="restaurant-banner"/>
                 </div>
                 <div className="map-box">
-                    <img src={map}/>
+                    <img src={map} alt="map"/>
                     <div className="rows">
                         <div className="first-row">
                             <img src={pin} alt="pin"/>
@@ -83,11 +83,11 @@ const RestaurantDetailView = (props) => {
                 </div>
                 <div className="restaurant-bottom-right-container">
                     <div className="business-hours">
-                        <img src={clock}/>
+                        <img src={clock} alt="clock"/>
                         <h1>{props.singleRestaurant.opening_hours ? props.singleRestaurant.opening_hours : "Keine Öffnungszeiten vorhanden"}</h1>
                     </div>
                     <div className="price-level">
-                        <img src={money}/>
+                        <img src={money} alt="money"/>
                         <h1>Price level: {props.singleRestaurant.price_level}</h1>
                     </div>
                     <div className="actions">
