@@ -1,0 +1,17 @@
+.MyComments {
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+    border-bottom:gray 1px solid;
+    border-radius: 3px;
+    padding: 15px;
+    width: 390px;
+}
+
+.eachComment {
+    width: 586px;
+    height: 66px;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+}

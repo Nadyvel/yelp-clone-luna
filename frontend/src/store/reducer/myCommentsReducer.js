@@ -1,5 +1,6 @@
 const initialState = {
-    myComments: []
+    myComments: [],
+    myRestaurants: []
 };
 
 export const myCommentsReducer = function (state = initialState, action) {
@@ -8,6 +9,12 @@ export const myCommentsReducer = function (state = initialState, action) {
             return {
                 ...state,
                 myComments: action.payload
+            }
+
+        case 'MY_RESTAURANTS':
+            return {
+                ...state,
+                myRestaurants: action.payload
             }
 
         default:
