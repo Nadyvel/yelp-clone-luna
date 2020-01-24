@@ -10,6 +10,7 @@ services:
       - static-files:/static-files
       - /etc/letsencrypt:/etc/letsencrypt
       - media-files:/media-files
+      - frontend:/frontend
 
   backend:
     image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/group-projects/aquarius:latest
@@ -21,6 +22,7 @@ services:
     volumes:
       - static-files:/static-files
       - media-files:/media-files
+      - frontend:/frontend-build
       - ./scripts:/scripts
 
   postgres:
@@ -34,3 +36,4 @@ volumes:
   luna:
   static-files:
   media-files:
+  frontend:
